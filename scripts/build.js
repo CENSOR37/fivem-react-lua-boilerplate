@@ -20,18 +20,42 @@ createBuilder(
   [],
   async (outfiles) => {
     const files = await getFiles('dist/web', 'static', 'locales');
+    const shared = [
+      "@censorlib/imports.lua",
+      "@es_extended/imports.lua",
+      "init.lua",
+      "vendors/*.shared*.lua",
+      "vendors/**/shared.lua",
+      "cfg/*.shared*.lua",
+    ];
     await createFxmanifest({
       client_scripts: [
-        "src/modules/*.shared.lua",
-        "src/modules/*.client.lua",
-        "src/core/shared.lua",
-        "src/core/client.lua"
+        ...shared,
+        "vendors/*.client*.lua",
+        "vendors/**/client.lua",
+        "lib/*.shared*.lua",
+        "lib/**/shared.lua",
+        "lib/*.client*.lua",
+        "lib/**/client.lua",
+        "cfg/*.server*.lua",
+        "src/*.shared*.lua",
+        "src/*.client*.lua",
+        "src/**/shared.lua",
+        "src/**/client.lua",
       ],
       server_scripts: [
-        "src/modules/*.shared.lua",
-        "src/modules/*.server.lua",
-        "src/core/shared.lua",
-        "src/core/server.lua"
+        ...shared,
+        "vendors/*.server*.lua",
+        "vendors/**/server.lua",
+        "lib/*.shared*.lua",
+        "lib/**/shared.lua",
+        "lib/*.server*.lua",
+        "lib/**/server.lua",
+        "cfg/*.server*.lua",
+        "src/*.shared*.lua",
+        "src/*.server*.lua",
+        "src/**/shared.lua",
+        "src/**/server.lua",
       ],
       files: ['lib/init.lua', 'lib/client/**.lua', 'locales/*.json', ...files],
       dependencies: ['/server:13068', '/onesync'],
