@@ -116,7 +116,7 @@ local function create_synced_instance(classname)
             end
         end
 
-        lib.resource.on_server(("rep:%s:refresh"):format(self.__classname), refresh_inst)
+        -- refresh when load for the first time
         native.create_thread(refresh_inst)
 
         local new_inst = function(id, args)
@@ -144,10 +144,11 @@ local function create_synced_instance(classname)
     return self
 end
 
-rawset(_G, "synced_instance", setmetatable({
+
+return setmetatable({
     new = create_synced_instance,
 }, {
     __call = function(t, ...)
         return create_synced_instance(...)
     end,
-}))
+})

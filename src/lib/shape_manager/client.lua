@@ -1,4 +1,4 @@
-shape_manager = {}
+local shape_manager = {}
 shape_manager.__index = shape_manager
 
 function shape_manager.new(...)
@@ -72,3 +72,5 @@ end
 function shape_manager:on_player_exit_colshape(callback)
     return self.delegate.player_exit_colshape:add(callback)
 end
+
+return shape_manager

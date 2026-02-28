@@ -1,4 +1,4 @@
-local node = main.class.node
+local node = require "src.modules.node.shared"
 
 ---@diagnostic disable-next-line: duplicate-set-field
 function node:constructor(...)
@@ -9,3 +9,5 @@ end
 function node:destructor()
     self:uninitialize()
 end
+
+return node

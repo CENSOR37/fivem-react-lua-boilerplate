@@ -41,4 +41,4 @@ function state:unsubscribe(callback)
     self.private.subscribers[callback] = nil
 end
 
-main.lib.ref = state -- export
+return state

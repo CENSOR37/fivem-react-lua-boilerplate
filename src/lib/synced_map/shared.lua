@@ -301,4 +301,4 @@ function synced_map:on_post_change(func)
     self.delegates.post_replicate_change:bind(func)
 end
 
-rawset(_ENV, "synced_map", synced_map)
+return synced_map

@@ -30,4 +30,4 @@ function lib_esx.register_admin_command(command_name, callback)
     end, false)
 end
 
-main.lib.esx = lib_esx
+return lib_esx

@@ -1,6 +1,6 @@
-game = game or {}
+local game = {}
 
-function GetHeadingBetween(coords1, coords2)
+local function GetHeadingBetween(coords1, coords2)
     return GetHeadingFromVector_2d(coords2.x - coords1.x, coords2.y - coords1.y)
 end
 
@@ -274,3 +274,5 @@ end
 function game.get_closest_player(...)
     return getClosestPlayer(...)
 end
+
+return game

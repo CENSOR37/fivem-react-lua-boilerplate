@@ -1,6 +1,6 @@
-local node = synced_instance.new(("%s:node"):format(cslib.resource.name))
+local synced_instance = require "lib.synced_instance.shared"
 
-main.class.node = node
+local node = synced_instance.new(("%s:node"):format(cslib.resource.name))
 
 node.__instances = {}
 node.instance = {}
@@ -66,3 +66,5 @@ function node:timer(timer_id)
 
     return timer_id
 end
+
+return node

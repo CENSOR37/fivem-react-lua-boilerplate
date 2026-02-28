@@ -10,7 +10,7 @@
     - observer:on_chance(key, func)
  ]]
 
-observer = cslib.class()
+local observer = cslib.class()
 
 function observer:constructor(opts)
     self.interval = cslib.coalesce(opts.interval, 1000)
@@ -77,3 +77,5 @@ function observer:add_watch(key, opts)
         on_change(self.watches[key].last_value, nil)
     end
 end
+
+return observer
