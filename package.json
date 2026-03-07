@@ -6,11 +6,9 @@
 	"description": "",
 	"type": "module",
 	"scripts": {
-		"web:dev": "cd web && vite dev",
+		"web:dev": "pnpm --prefix ./web run dev",
 		"build": "node scripts/build.js",
-		"watch": "node scripts/build.js --watch",
-		"format": "pnpm biome format --write",
-		"lint": "pnpm biome lint --write"
+		"watch": "node scripts/build.js --watch"
 	},
 	"keywords": [
 		"fivem"
@@ -26,18 +24,10 @@
 		"@jgoz/esbuild-plugin-typecheck": "^4.0.3",
 		"@overextended/fx-utils": "^0.0.4",
 		"@types/node": "^22.13.9",
-		"@types/react": "^18.3.18",
-		"@types/react-dom": "^18.3.5",
-		"@vitejs/plugin-react": "^4.3.4",
-		"esbuild": "^0.25.0",
-		"typescript": "^5.8.2",
-		"vite": "^5.4.14"
+		"esbuild": "^0.25.0"
 	},
 	"dependencies": {
-		"@biomejs/biome": "^1.9.4",
 		"@nativewrappers/fivem": "latest",
-		"@overextended/ox_lib": "latest",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"@overextended/ox_lib": "latest"
 	}
 }
