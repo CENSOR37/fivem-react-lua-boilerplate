@@ -1,4 +1,4 @@
-local synced_instance = require "lib.synced_instance.shared"
+local synced_instance = require "lib.syncer.syncnode"
 
 local node = synced_instance.new(("%s:node"):format(cslib.resource.name))
 

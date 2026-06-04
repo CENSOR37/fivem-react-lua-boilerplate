@@ -39,10 +39,13 @@ createBuilder(
         "src/server.lua",
       ],
       files: [
-        "lib/**/shared.lua",
-        "lib/**/client.lua",
+        "src/lib/**/shared.lua",
+        "src/lib/**/client.lua",
+        "src/lib/**/syncmap.lua",
+        "src/lib/**/syncnode.lua",
         "src/modules/**/shared.lua",
         "src/modules/**/client.lua",
+        "src/modules/**/server.lua",
         ...files
       ],
       dependencies: ['/server:13068', '/onesync'],
